@@ -1,0 +1,57 @@
+digraph G {
+1585177487[label = "PROGRAM", shape = polygon, sides = 7, peripheries = 2, color = green3, style = filled]
+1845835164[label = "lambda(fib)"]
+1682054798[label = "vars", shape = octagon, color = black, fillcolor = purple, style = filled]
+1681632952[label = "var(n)"]
+1682054798 -> 1681632952
+2070591522[label = "body", shape = octagon, color = black, fillcolor = purple, style = filled]
+-1804594502[label = "block", shape = octagon, color = black, fillcolor = purple, style = filled]
+338424790[label = "if", shape = square, color = blue4, style = filled, fillcolor = green]
+-1544093838[label = "or", shape = square, color = blue4, style = filled, fillcolor = green]
+797200392[label = "eql", shape = square, color = blue4, style = filled, fillcolor = green]
+1853160147[label = "var(n)"]
+-800177883[label = "num(1)"]
+797200392 -> 1853160147
+797200392 -> -800177883
+-1661085031[label = "eql", shape = square, color = blue4, style = filled, fillcolor = green]
+-2144721369[label = "var(n)"]
+-403160141[label = "num(2)"]
+-1661085031 -> -2144721369
+-1661085031 -> -403160141
+-1544093838 -> 797200392
+-1544093838 -> -1661085031
+7022109[label = "return", shape = square, color = blue4, style = filled, fillcolor = green]
+-1025120463[label = "num(1)"]
+7022109 -> -1025120463
+338424790 -> -1544093838
+338424790 -> 7022109
+670195566[label = "return", shape = square, color = blue4, style = filled, fillcolor = green]
+750065[label = "sum", shape = square, color = blue4, style = filled, fillcolor = green]
+2094837692[label = "call(fib)"]
+1130195453[label = "sub", shape = square, color = blue4, style = filled, fillcolor = green]
+1510213667[label = "var(n)"]
+-1662564314[label = "num(1)"]
+1130195453 -> 1510213667
+1130195453 -> -1662564314
+2094837692 -> 1130195453
+-1434403068[label = "call(fib)"]
+48082338[label = "sub", shape = square, color = blue4, style = filled, fillcolor = green]
+-2013229036[label = "var(n)"]
+-1613968591[label = "num(2)"]
+48082338 -> -2013229036
+48082338 -> -1613968591
+-1434403068 -> 48082338
+750065 -> 2094837692
+750065 -> -1434403068
+670195566 -> 750065
+-1804594502 -> 338424790
+-1804594502 -> 670195566
+2070591522 -> -1804594502
+1845835164 -> 1682054798
+1845835164 -> 2070591522
+1951031729[label = "call(fib)"]
+-1576536336[label = "num(20)"]
+1951031729 -> -1576536336
+1585177487 -> 1845835164
+1585177487 -> 1951031729
+}

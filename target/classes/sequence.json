@@ -1,0 +1,42 @@
+{
+  "{":"LCB",
+  "}":"RCB",
+  "(":"LRB",
+  ")":"RRB",
+  "[":"LSB",
+  "]":"RSB",
+  ",":"COMA",
+  ":":"COLON",
+  ";":"SEMICOLON",
+
+  "->":"LAMBDA",
+
+  "**":"POW",
+  "*":"MUL",
+  "+":"SUM",
+  "-":"SUB",
+  "/":"DIV",
+  "%":"MOD",
+
+  "<=":"LE",
+  ">=":"BE",
+  "==":"EQL",
+  "!=":"NOT_EQL",
+  "<":"LT",
+  ">":"BT",
+  "or":"OR",
+  "not":"NOT",
+  "and":"AND",
+  "xor":"XOR",
+
+  "=":"ASSIGN",
+
+  "if":"IF",
+  "for":"FOR",
+  "else":"ELSE",
+  "while":"WHILE",
+  "break":"BREAK",
+  "return":"RETURN",
+  "continue":"CONTINUE",
+  "do_while":"DO_WHILE"
+}
