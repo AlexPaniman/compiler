@@ -1,5 +1,8 @@
 package execute;
 
+import executor.NativeExecutor;
+
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Stack;
 
@@ -12,10 +15,12 @@ public class VirtualMachine {
     private Stack<Frame> frames;
     private Stack<Object> stack;
     private Map<Object, Object> variables;
+    private NativeExecutor nativeExecutor;
 
-    public VirtualMachine(Object[] program) {
+    public VirtualMachine(NativeExecutor nativeExecutor, Object[] program) {
         this.index = 0;
         this.program = program;
+        this.nativeExecutor = nativeExecutor;
 
         this.frames = new Stack<>();
         this.frames.push(new Frame(-1));
@@ -32,7 +37,7 @@ public class VirtualMachine {
         Object second = stack.pop();
         Class classSecond = second.getClass();
         if (classFirst == String.class || classSecond == String.class)
-            return first.toString() + second.toString();
+            return second.toString() + first.toString();
         if (classFirst == Double.class || classSecond == Double.class) {
             double d1;
             if (classSecond == Double.class)
@@ -103,7 +108,7 @@ public class VirtualMachine {
         throw new IllegalArgumentException();
     }
 
-    public void execute() {
+    public void execute() throws VirtualMachineException {
         while (true) {
             if (program[index] == PUSH) {
                 stack.push(program[index + 1]);
@@ -148,6 +153,13 @@ public class VirtualMachine {
                     return;
 
                 variables = frames.peek().vars();
+            } else if (program[index] == NATIVE) {
+                try {
+                    stack.push(nativeExecutor.invoke((int) program[index + 1], stack));
+                } catch (InvocationTargetException | IllegalAccessException e) {
+                    throw new VirtualMachineException("Can't find or access native method!");
+                }
+                index += 2;
             }
 
             else if (program[index] == NOT)

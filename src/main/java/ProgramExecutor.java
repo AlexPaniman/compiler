@@ -1,13 +1,14 @@
 import compile.Compiler;
 import execute.VirtualMachine;
+import executor.NativeExecutor;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import lexer.Lexer;
-import parse.Node;
-import javafx.scene.image.Image;
+import nodes.INode;
 import parse.Parser;
 
 import java.io.File;
@@ -36,10 +37,6 @@ public class ProgramExecutor extends Application {
         return repeat(num - len(i)) + i;
     }
 
-    private String complete(Object[] arr, int i) {
-        return repeat(len(arr.length) - len(i)) + i;
-    }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         String program = Files
@@ -51,29 +48,30 @@ public class ProgramExecutor extends Application {
         int count = 0;
         while (lexer.nextToken()) {
             if (lexer.token() == NUM || lexer.token() == VAR || lexer.token() == STR)
-                System.out.println("\t" + complete(3, count) + ":= " + lexer.token() + "(" + lexer.value() + ")");
+                System.out.println("\t" + complete(4, count) + ":= " + lexer.token() + "(" + lexer.value() + ")");
             else
-                System.out.println("\t" + complete(3, count) + ":= " + lexer.token());
-            count ++;
+                System.out.println("\t" + complete(4, count) + ":= " + lexer.token());
+            count++;
         }
         lexer = new Lexer(program);
-        Node main = new Parser(lexer).parse();
+        INode main = new Parser(lexer).parse();
 
-        Files.write(
-                new File("src/main/resources/graph.dot").toPath(),
-                "digraph G {\n".concat(main.graphViz()).concat("}").getBytes()
-        );
+        Files.write(new File("src/main/resources/graph.dot").toPath(), main.resultViz().getBytes());
 
-        Process process = Runtime.getRuntime().exec("dot -Tpng src/main/resources/graph.dot -o src/main/resources/graph.png");
+        Process process = Runtime.getRuntime().exec("dot -Tsvg src/main/resources/graph.dot -o src/main/resources/graph.svg");
         while (process.isAlive())
             Thread.sleep(1);
+        process = Runtime.getRuntime().exec("dot -Tpng src/main/resources/graph.dot -o src/main/resources/graph.png");
+        while (process.isAlive())
+            Thread.sleep(1);
+        //Runtime.getRuntime().exec("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe src/main/resources/graph.svg");
 
         Image image = new Image(new File("src/main/resources/graph.png").toURI().toURL().toString());
         ImageView imageView = new ImageView(image);
 
         Group root = new Group();
 
-        Scene scene = new Scene(root, image.getWidth(), image.getHeight());
+        Scene scene = new Scene(root);
 
         root.getChildren().add(imageView);
 
@@ -84,18 +82,26 @@ public class ProgramExecutor extends Application {
         primaryStage.show();
 
         System.out.println("\nBYTE-CODE:");
-        Compiler compiler = new Compiler();
+        NativeExecutor executor = new NativeExecutor(
+                new Object() {
+                    public void print(Object obj) {
+                        System.out.println(obj);
+                    }
+                }
+        );
+        Compiler compiler = new Compiler(executor);
         Object[] operands = compiler.compileProgram(main);
         for (int i = 0; i < operands.length; i++) {
             Object obj = operands[i];
-            if (obj == PUSH || obj == FETCH || obj == JZ || obj == JNZ || obj == JMP || obj == STORE || obj == INVOKE) {
-                System.out.println("\t" + complete(operands, i) + ":= " + obj + " " + operands[++ i]);
-            }
-            else
-                System.out.println("\t" + complete(operands, i) + ":= " + obj);
+            if (obj == PUSH || obj == FETCH || obj == JZ || obj == JNZ || obj == JMP || obj == STORE || obj == INVOKE || obj == NATIVE) {
+                System.out.println("\t" + complete(4, i) + ":= " + obj + " " + operands[++i]);
+            } else
+                System.out.println("\t" + complete(4, i) + ":= " + obj);
         }
-        VirtualMachine vm = new VirtualMachine(operands);
+        VirtualMachine vm = new VirtualMachine(executor, operands);
+        System.out.println("\nCONSOLE:");
         vm.execute();
+        System.out.println();
         System.out.println("\n" + vm.status());
     }
 }

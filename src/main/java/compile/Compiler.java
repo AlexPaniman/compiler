@@ -1,24 +1,26 @@
 package compile;
 
 import execute.Operand;
+import executor.NativeExecutor;
 import lexer.Token;
-import parse.Node;
+import nodes.*;
 
 import java.util.*;
 
 import static execute.Operand.*;
-import static lexer.Token.*;
 
 public class Compiler {
     private List<Object> program;
     private Map<String, Integer> variables;
     private Map<String, Integer> functions;
+    private NativeExecutor nativeExecutor;
     private int count;
 
-    public Compiler() {
+    public Compiler(NativeExecutor nativeExecutor) {
         this.program = new ArrayList<>();
         this.variables = new HashMap<>();
         this.functions = new HashMap<>();
+        this.nativeExecutor = nativeExecutor;
         this.count = 0;
     }
 
@@ -26,22 +28,15 @@ public class Compiler {
         program.addAll(Arrays.asList(ops));
     }
 
-    private void binary(Operand operand, Node node) {
-        compile(node.nodes()[0]);
-        compile(node.nodes()[1]);
+    private void binary(Operand operand, BinaryOperator node) throws CompilerException {
+        compile(node.first());
+        compile(node.second());
         gen(operand);
     }
 
-    private void compile(Node node) {
-        Token token = node.token();
-        if (token == null)
-            for (Node n : node.nodes())
-                compile(n);
-        else if (token == VAR)
-            gen(FETCH, variables.get(node.value().toString()));
-        else if (token == NUM || token == STR)
-            gen(PUSH, node.value());
-        else if (token == Token.XOR)
+    private void math(BinaryOperator node) throws CompilerException {
+        Token token = node.operator();
+        if (token == Token.XOR)
             binary(Operand.XOR, node);
         else if (token == Token.EQL)
             binary(Operand.EQL, node);
@@ -69,76 +64,111 @@ public class Compiler {
             binary(Operand.BE, node);
         else if (token == Token.OR)
             binary(Operand.OR, node);
-        else if (token == ASSIGN) {
-            compile(node.nodes()[1]);
-            gen(STORE, variables.computeIfAbsent((String) node.nodes()[0].value(), n -> count++));
-        } else if (token == FOR) {
-            compile(node.nodes()[0]);
+    }
+
+    private void compile(INode node) throws CompilerException {
+        if (node instanceof Program)
+            compile(((Program) node).program());
+        if (node instanceof BinaryOperator)
+            math((BinaryOperator) node);
+        else if (node instanceof Block)
+            for (INode n : ((Block) node).nodes())
+                compile(n);
+        else if (node instanceof Variable)
+            gen(FETCH, variables.get(((Variable) node).name()));
+        else if (node instanceof Constant)
+            gen(PUSH, ((Constant) node).value());
+        else if (node instanceof Assign) {
+            Assign assign = (Assign) node;
+            compile(assign.expression());
+            gen(STORE, variables.computeIfAbsent(assign.variable(), n -> count++));
+        } else if (node instanceof For) {
+            For forLoop = (For) node;
+            compile(forLoop.initializer());
             int loop = program.size();
-            compile(node.nodes()[1]);
+            compile(forLoop.condition());
             gen(JZ, 0);
             int index = program.size() - 1;
-            compile(node.nodes()[2]);
-            compile(node.nodes()[3]);
+            compile(forLoop.body());
+            compile(forLoop.iterator());
             gen(JMP, loop);
             program.set(index, program.size());
-        } else if (token == WHILE) {
+        } else if (node instanceof While) {
+            While whileLoop = (While) node;
             int loop = program.size();
-            compile(node.nodes()[0]);
+            compile(whileLoop.condition());
             gen(JZ, 0);
             int index = program.size() - 1;
-            compile(node.nodes()[1]);
+            compile(whileLoop.body());
             gen(JMP, loop);
             program.set(index, program.size());
-        } else if (token == DO_WHILE) {
-            compile(node.nodes()[0]);
+        } else if (node instanceof DoWhile) {
+            DoWhile doWhile = (DoWhile) node;
+            compile(doWhile.condition());
             int loop = program.size();
-            compile(node.nodes()[0]);
+            compile(doWhile.body());
             gen(JZ, 0);
             int index = program.size() - 1;
-            compile(node.nodes()[1]);
+            compile(doWhile.body());
             gen(JMP, loop);
             program.set(index, program.size());
-        } else if (token == IF) {
-            int len = node.nodes().length;
-            compile(node.nodes()[0]);
+        } else if (node instanceof ShortIf) {
+            ShortIf shortIf = (ShortIf) node;
+            compile(shortIf.condition());
             gen(JZ, 0);
             int index = program.size() - 1;
-            if (len == 2) {
-                compile(node.nodes()[1]);
-                program.set(index, program.size());
-            } else {
-                compile(node.nodes()[1]);
-                gen(JMP, 0);
-                program.set(index, program.size());
-                index = program.size() - 1;
-                compile(node.nodes()[2]);
-                program.set(index, program.size());
-            }
-        } else if (token == LAMBDA) {
+            compile(shortIf.thenNode());
+            program.set(index, program.size());
+        } else if (node instanceof ExtendedIf) {
+            ExtendedIf extendedIf = (ExtendedIf) node;
+            compile(extendedIf.condition());
+            gen(JZ, 0);
+            int index = program.size() - 1;
+            compile(extendedIf.thenNode());
             gen(JMP, 0);
-            functions.put(node.value().toString(), program.size());
-            int index = program.size() - 1;
-            for (Node n : node.nodes()[0].nodes())
-                gen(STORE, variables.computeIfAbsent((String) n.value(), nodeC -> count++));
-            if (node.nodes()[1].nodes().length == 1 && node.nodes()[1].nodes()[0].token() != RETURN) {
-                compile(node.nodes()[1]);
-                gen(RET);
-            } else
-                compile(node.nodes()[1]);
             program.set(index, program.size());
-        } else if (token == RETURN) {
-            compile(node.nodes()[0]);
+            index = program.size() - 1;
+            compile(extendedIf.elseNode());
+            program.set(index, program.size());
+        } else if (node instanceof DefineFunction) {
+            DefineFunction defineFunc = (DefineFunction) node;
+            gen(JMP, 0);
+            functions.put(defineFunc.name(), program.size());
+            int index = program.size() - 1;
+            for (INode n : defineFunc.variables())
+                gen(STORE, variables.computeIfAbsent(((Variable) n).name(), nodeC -> count++));
+            if (defineFunc.body() instanceof Block)
+                compile(defineFunc.body());
+            else {
+                compile(defineFunc.body());
+                gen(RET);
+            }
+            program.set(index, program.size());
+        } else if (node instanceof Return) {
+            Return ret = (Return) node;
+            if (ret.expression() != null)
+                compile(ret.expression());
+            else
+                gen((Object) null);
             gen(RET);
-        } else if (token == CALL) {
-            Node[] nodes = node.nodes();
+        } else if (node instanceof FunctionCall) {
+            FunctionCall call = (FunctionCall) node;
+            INode[] nodes = call.variables();
             for (int i = nodes.length - 1; i >= 0; i--)
                 compile(nodes[i]);
-            gen(INVOKE, functions.get(node.value().toString()));
+            if (functions.containsKey(call.name()))
+                gen(INVOKE, functions.get(call.name()));
+            else if (nativeExecutor != null) try {
+                gen(NATIVE, nativeExecutor.get(call.name()));
+            } catch (NoSuchMethodException exc) {
+                throw new CompilerException("Can't find or access " + call.name() + " function!");
+            } else throw new CompilerException("Can't find or access " + call.name() + " function!");
+            if (!call.useReturn())
+                gen(POP);
         }
     }
 
-    public Object[] compileProgram(Node main) {
+    public Object[] compileProgram(INode main) throws CompilerException {
         compile(main);
         gen(RET);
         return program.toArray();

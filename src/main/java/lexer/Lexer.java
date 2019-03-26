@@ -57,8 +57,8 @@ public class Lexer {
                 index++;
                 return true;
             }
-            if (program[index++] == '\\')
-                switch (program[index]) {
+            if (program[index] == '\\')
+                switch (program[++index]) {
                     case '\\':
                         string.append("\\");
                         break;

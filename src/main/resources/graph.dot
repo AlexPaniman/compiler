@@ -1,57 +1,111 @@
-digraph G {
-1585177487[label = "PROGRAM", shape = polygon, sides = 7, peripheries = 2, color = green3, style = filled]
-1845835164[label = "lambda(fib)"]
-1682054798[label = "vars", shape = octagon, color = black, fillcolor = purple, style = filled]
-1681632952[label = "var(n)"]
-1682054798 -> 1681632952
-2070591522[label = "body", shape = octagon, color = black, fillcolor = purple, style = filled]
--1804594502[label = "block", shape = octagon, color = black, fillcolor = purple, style = filled]
-338424790[label = "if", shape = square, color = blue4, style = filled, fillcolor = green]
--1544093838[label = "or", shape = square, color = blue4, style = filled, fillcolor = green]
-797200392[label = "eql", shape = square, color = blue4, style = filled, fillcolor = green]
-1853160147[label = "var(n)"]
--800177883[label = "num(1)"]
-797200392 -> 1853160147
-797200392 -> -800177883
--1661085031[label = "eql", shape = square, color = blue4, style = filled, fillcolor = green]
--2144721369[label = "var(n)"]
--403160141[label = "num(2)"]
--1661085031 -> -2144721369
--1661085031 -> -403160141
--1544093838 -> 797200392
--1544093838 -> -1661085031
-7022109[label = "return", shape = square, color = blue4, style = filled, fillcolor = green]
--1025120463[label = "num(1)"]
-7022109 -> -1025120463
-338424790 -> -1544093838
-338424790 -> 7022109
-670195566[label = "return", shape = square, color = blue4, style = filled, fillcolor = green]
-750065[label = "sum", shape = square, color = blue4, style = filled, fillcolor = green]
-2094837692[label = "call(fib)"]
-1130195453[label = "sub", shape = square, color = blue4, style = filled, fillcolor = green]
-1510213667[label = "var(n)"]
--1662564314[label = "num(1)"]
-1130195453 -> 1510213667
-1130195453 -> -1662564314
-2094837692 -> 1130195453
--1434403068[label = "call(fib)"]
-48082338[label = "sub", shape = square, color = blue4, style = filled, fillcolor = green]
--2013229036[label = "var(n)"]
--1613968591[label = "num(2)"]
-48082338 -> -2013229036
-48082338 -> -1613968591
--1434403068 -> 48082338
-750065 -> 2094837692
-750065 -> -1434403068
-670195566 -> 750065
--1804594502 -> 338424790
--1804594502 -> 670195566
-2070591522 -> -1804594502
-1845835164 -> 1682054798
-1845835164 -> 2070591522
-1951031729[label = "call(fib)"]
--1576536336[label = "num(20)"]
-1951031729 -> -1576536336
-1585177487 -> 1845835164
-1585177487 -> 1951031729
+graph A
+{40 [shape = point];
+42 [color = white, label = "0"];
+40 -- 42;
+18 [label = "define[fib(n)]", shape = octane, style = filled, color = black, fillcolor = green3];
+17 [shape = point];
+43 [color = white, label = "0"];
+17 -- 43;
+1 [label = "var(n)", color = black, style = filled, shape = egg, fillcolor = green4];
+2 [label = "const(2)", style = filled, color = black, fillcolor = orange];
+3 [label = "le", shape = triangle, color = black, style = filled, fillcolor = yellow];
+3 -- 1;
+3 -- 2;
+4 [label = "const(1)", style = filled, color = black, fillcolor = orange];
+5 [label = "return", shape = hexagon, color = red, style = filled, fillcolor = grey];
+5 -- 4
+subgraph clusterIS0 {
+color = black;6 [label = "if", shape = square, style = filled];
+44 [label = "condition", shape = egg];
+45 [label = "then", shape = egg];
+}
+6 -- 44 [style=dotted];
+6 -- 45 [style=dotted];
+44 -- 3;
+45 -- 5;
+43 -- 6;
+46 [color = white, label = "1"];
+17 -- 46;
+10 [label = "call(fib)", shape = octagon, style = filled, color = black, fillcolor = lightblue];
+7 [label = "var(n)", color = black, style = filled, shape = egg, fillcolor = green4];
+8 [label = "const(1)", style = filled, color = black, fillcolor = orange];
+9 [label = "sub", shape = triangle, color = black, style = filled, fillcolor = yellow];
+9 -- 7;
+9 -- 8;
+10 -- 9;
+14 [label = "call(fib)", shape = octagon, style = filled, color = black, fillcolor = lightblue];
+11 [label = "var(n)", color = black, style = filled, shape = egg, fillcolor = green4];
+12 [label = "const(2)", style = filled, color = black, fillcolor = orange];
+13 [label = "sub", shape = triangle, color = black, style = filled, fillcolor = yellow];
+13 -- 11;
+13 -- 12;
+14 -- 13;
+15 [label = "sum", shape = triangle, color = black, style = filled, fillcolor = yellow];
+15 -- 10;
+15 -- 14;
+16 [label = "return", shape = hexagon, color = red, style = filled, fillcolor = grey];
+16 -- 15
+46 -- 16;
+18 -- 17;
+42 -- 18;
+47 [color = white, label = "1"];
+40 -- 47;
+19 [label = "const(0)", style = filled, color = black, fillcolor = orange];
+20 [label = "assign[sum]", shape = octane, style = filled, color = blue4, fillcolor = lightblue3];
+20 -- 19;
+47 -- 20;
+48 [color = white, label = "2"];
+40 -- 48;
+21 [label = "const(0)", style = filled, color = black, fillcolor = orange];
+22 [label = "assign[i]", shape = octane, style = filled, color = blue4, fillcolor = lightblue3];
+22 -- 21;
+23 [label = "var(i)", color = black, style = filled, shape = egg, fillcolor = green4];
+24 [label = "const(10)", style = filled, color = black, fillcolor = orange];
+25 [label = "lt", shape = triangle, color = black, style = filled, fillcolor = yellow];
+25 -- 23;
+25 -- 24;
+26 [label = "var(i)", color = black, style = filled, shape = egg, fillcolor = green4];
+27 [label = "const(1)", style = filled, color = black, fillcolor = orange];
+28 [label = "sum", shape = triangle, color = black, style = filled, fillcolor = yellow];
+28 -- 26;
+28 -- 27;
+29 [label = "assign[i]", shape = octane, style = filled, color = blue4, fillcolor = lightblue3];
+29 -- 28;
+30 [label = "var(sum)", color = black, style = filled, shape = egg, fillcolor = green4];
+32 [label = "call(fib)", shape = octagon, style = filled, color = black, fillcolor = lightblue];
+31 [label = "var(i)", color = black, style = filled, shape = egg, fillcolor = green4];
+32 -- 31;
+33 [label = "sum", shape = triangle, color = black, style = filled, fillcolor = yellow];
+33 -- 30;
+33 -- 32;
+34 [label = "assign[sum]", shape = octane, style = filled, color = blue4, fillcolor = lightblue3];
+34 -- 33;
+subgraph clusterF0 {
+35 [label = "for", shape = square, style = filled];
+49 [label = "initializer", shape = egg];
+50 [label = "condition", shape = egg];
+51 [label = "iterator", shape = egg];
+52 [label = "body", shape = egg];
+}
+35 -- 49 [style = dotted];
+35 -- 50 [style = dotted];
+35 -- 51 [style = dotted];
+35 -- 52 [style = dotted];
+49 -- 22;
+50 -- 25;
+51 -- 29;
+52 -- 34;
+48 -- 35;
+53 [color = white, label = "3"];
+40 -- 53;
+39 [label = "call(print)", shape = octagon, style = filled, color = black, fillcolor = lightblue];
+36 [label = "var(sum)", color = black, style = filled, shape = egg, fillcolor = green4];
+37 [label = "const(2)", style = filled, color = black, fillcolor = orange];
+38 [label = "pow", shape = triangle, color = black, style = filled, fillcolor = yellow];
+38 -- 36;
+38 -- 37;
+39 -- 38;
+53 -- 39;
+41 [label = "program", shape = tripleoctagon];
+41 -- 40
 }
