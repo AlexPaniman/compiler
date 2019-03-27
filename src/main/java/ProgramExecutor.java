@@ -64,7 +64,6 @@ public class ProgramExecutor extends Application {
         process = Runtime.getRuntime().exec("dot -Tpng src/main/resources/graph.dot -o src/main/resources/graph.png");
         while (process.isAlive())
             Thread.sleep(1);
-        //Runtime.getRuntime().exec("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe src/main/resources/graph.svg");
 
         Image image = new Image(new File("src/main/resources/graph.png").toURI().toURL().toString());
         ImageView imageView = new ImageView(image);
@@ -85,7 +84,7 @@ public class ProgramExecutor extends Application {
         NativeExecutor executor = new NativeExecutor(
                 new Object() {
                     public void print(Object obj) {
-                        System.out.println(obj);
+                        System.out.print(obj);
                     }
                 }
         );
