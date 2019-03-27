@@ -104,9 +104,9 @@ public class Compiler {
             program.set(index, program.size());
         } else if (node instanceof DoWhile) {
             DoWhile doWhile = (DoWhile) node;
-            compile(doWhile.condition());
-            int loop = program.size();
             compile(doWhile.body());
+            int loop = program.size();
+            compile(doWhile.condition());
             gen(JZ, 0);
             int index = program.size() - 1;
             compile(doWhile.body());
