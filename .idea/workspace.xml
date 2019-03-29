@@ -4,18 +4,14 @@
     <list default="true" id="dce44498-8b93-4dd1-a2aa-36153786521d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgramExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgramExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/compile/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/compile/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nodes/BinaryOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nodes/BinaryOperator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/graph.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graph.dot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graph.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/graph.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graph.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SimpleTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ProgramExecutor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProgramExecutor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/compile/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/compile/Compiler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProgramExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProgramExecutor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/graph.dot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graph.dot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graph.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/graph.svg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graph.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telgento.iml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,12 +30,24 @@
       <file leaf-file-name="ProgramExecutor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ProgramExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+            <state relative-caret-position="176">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#repeat#0;class#ProgramExecutor#0" />
+                <element signature="method#complete#0;class#ProgramExecutor#0" />
+                <element signature="method#start#0;class#ProgramExecutor#0" />
+                <element signature="e#3154#3307#0" expanded="true" />
+                <element signature="e#3306#3307#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/script.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -148,111 +156,59 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="compile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="execute" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="executor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lexer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="nodes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="parse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="telgento" type="b2602c69:ProjectViewProjectNode" />
-              <item name="telgento" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -466,40 +422,40 @@
     <option name="totallyTimeSpent" value="187077000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4367694" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.19553666" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.53050107" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.7352941" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1296875" />
-      <window_info anchor="right" id="Bean Validation" order="4" />
-      <window_info id="Learn" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43564355" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.39933994" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2635432" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4367694" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
+      <window_info id="Learn" order="2" />
+      <window_info anchor="right" id="Bean Validation" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
     </layout>
   </component>
@@ -515,13 +471,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1215">
-          <caret line="588" column="53" selection-start-line="588" selection-start-column="53" selection-end-line="588" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/List.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/nodes/Operator.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/nodes/Power.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/nodes/Remainder.java" />
@@ -545,27 +495,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/ButtonBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="457" column="25" selection-start-line="457" selection-start-column="21" selection-end-line="457" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/tools/jar/CommandLine.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="257" column="4" selection-start-line="257" selection-start-column="4" selection-end-line="257" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/ButtonBar.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/tools/jar/CommandLine.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/System.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/lexer/Token.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -676,11 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="215" column="82" selection-start-line="215" selection-start-column="82" selection-end-line="215" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="initializer##0;class#Parser#0" />
-            <element signature="method#Parser#0;class#Parser#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,13 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/SimpleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -716,9 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,10 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#VirtualMachine#0;class#VirtualMachine#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,13 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Compiler#0;class#Compiler#0" />
-            <element signature="method#binary#0;class#Compiler#0" />
-            <element signature="method#math#0;class#Compiler#0" />
-            <element signature="method#compileProgram#0;class#Compiler#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -776,12 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#137#138#0" expanded="true" />
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -789,9 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="71" column="72" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
-          <folding>
-            <element signature="class#391:435" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -799,9 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="method#resultViz#0;class#INode#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -809,39 +703,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="initializer##0;class#Lexer#0" />
-            <element signature="class#593:637" />
-            <element signature="method#Lexer#0;class#Lexer#0" />
-            <element signature="method#num#0;class#Lexer#0" />
-            <element signature="method#var#0;class#Lexer#0" />
-            <element signature="method#seq#0;class#Lexer#0" />
-            <element signature="method#anySeq#0;class#Lexer#0" />
-            <element signature="method#skip#0;class#Lexer#0" />
-            <element signature="method#ended#0;class#Lexer#0" />
-            <element signature="method#nextToken#0;class#Lexer#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/graph.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/SimpleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/script.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="24" column="15" lean-forward="true" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        <state relative-caret-position="442">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ProgramExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+        <state relative-caret-position="176">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#repeat#0;class#ProgramExecutor#0" />
+            <element signature="method#complete#0;class#ProgramExecutor#0" />
+            <element signature="method#start#0;class#ProgramExecutor#0" />
+            <element signature="e#3154#3307#0" expanded="true" />
+            <element signature="e#3306#3307#0" expanded="true" />
           </folding>
         </state>
       </provider>

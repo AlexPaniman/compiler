@@ -9,20 +9,20 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 946.6)">
 <title>A</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-946.6 2780.45,-946.6 2780.45,4 -4,4"/>
+<g id="clust1" class="cluster"><title>clusterIS0</title>
+<polygon fill="none" stroke="black" points="346.607,-397 346.607,-526 534.607,-526 534.607,-397 346.607,-397"/>
+</g>
 <g id="clust2" class="cluster"><title>clusterIS1</title>
 <polygon fill="none" stroke="black" points="1042.61,-397 1042.61,-526 1230.61,-526 1230.61,-397 1042.61,-397"/>
 </g>
-<g id="clust1" class="cluster"><title>clusterIS0</title>
-<polygon fill="none" stroke="black" points="346.607,-397 346.607,-526 534.607,-526 534.607,-397 346.607,-397"/>
+<g id="clust3" class="cluster"><title>clusterF0</title>
+<polygon fill="none" stroke="black" points="1619.61,-397 1619.61,-526 2017.61,-526 2017.61,-397 1619.61,-397"/>
 </g>
 <g id="clust5" class="cluster"><title>clusterF1</title>
 <polygon fill="none" stroke="black" points="2303.61,-315 2303.61,-449 2701.61,-449 2701.61,-315 2303.61,-315"/>
 </g>
 <g id="clust4" class="cluster"><title>clusterDW0</title>
 <polygon fill="none" stroke="black" points="2202.61,-151 2202.61,-289.5 2396.61,-289.5 2396.61,-151 2202.61,-151"/>
-</g>
-<g id="clust3" class="cluster"><title>clusterF0</title>
-<polygon fill="none" stroke="black" points="1619.61,-397 1619.61,-526 2017.61,-526 2017.61,-397 1619.61,-397"/>
 </g>
 <g id="clust6" class="cluster"><title>clusterDW142</title>
 <polygon fill="none" stroke="black" points="1495.61,-618 1495.61,-751 1689.61,-751 1689.61,-618 1495.61,-618"/>
