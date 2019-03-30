@@ -11,6 +11,7 @@ import lexer.Lexer;
 import nodes.INode;
 import parse.Parser;
 
+import java.awt.*;
 import java.io.File;
 import java.nio.file.Files;
 import java.util.stream.IntStream;
@@ -25,16 +26,12 @@ public class ProgramExecutor extends Application {
         launch(args);
     }
 
-    private String repeat(int num) {
-        return IntStream.range(0, num).mapToObj(n -> (Object) n).reduce("", (acc, id) -> acc + " ").toString();
-    }
-
-    private int len(int num) {
-        return String.valueOf(num).length();
-    }
-
-    private String complete(int num, int i) {
-        return repeat(num - len(i)) + i;
+    private String complete(int i) {
+        return IntStream
+                .range(0, /*length = */ 4 - String.valueOf(i).length())
+                .mapToObj(n -> (Object) n)
+                .reduce("", (acc, id) -> acc + " ")
+                .toString() + i;
     }
 
     @Override
@@ -48,9 +45,9 @@ public class ProgramExecutor extends Application {
         int count = 0;
         while (lexer.nextToken()) {
             if (lexer.token() == NUM || lexer.token() == VAR || lexer.token() == STR)
-                System.out.println("\t" + complete(4, count) + ":= " + lexer.token() + "(" + lexer.value() + ")");
+                System.out.println("\t" + complete(count) + ":= " + lexer.token() + "(" + lexer.value() + ")");
             else
-                System.out.println("\t" + complete(4, count) + ":= " + lexer.token());
+                System.out.println("\t" + complete(count) + ":= " + lexer.token());
             count++;
         }
         lexer = new Lexer(program);
@@ -71,6 +68,15 @@ public class ProgramExecutor extends Application {
         Group root = new Group();
 
         Scene scene = new Scene(root);
+
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+
+        double x = image.getHeight() / (dimension.getHeight() - 20);
+        double y = image.getWidth() / (dimension.getWidth() - 20);
+        double res = Math.max(x, y);
+
+        imageView.setFitWidth(image.getWidth() / res);
+        imageView.setFitHeight(image.getHeight() / res);
 
         root.getChildren().add(imageView);
 
@@ -93,9 +99,9 @@ public class ProgramExecutor extends Application {
         for (int i = 0; i < operands.length; i++) {
             Object obj = operands[i];
             if (obj == PUSH || obj == FETCH || obj == JZ || obj == JNZ || obj == JMP || obj == STORE || obj == INVOKE || obj == NATIVE) {
-                System.out.println("\t" + complete(4, i) + ":= " + obj + " " + operands[++i]);
+                System.out.println("\t" + complete(i) + ":= " + obj + " " + operands[++i]);
             } else
-                System.out.println("\t" + complete(4, i) + ":= " + obj);
+                System.out.println("\t" + complete(i) + ":= " + obj);
         }
         VirtualMachine vm = new VirtualMachine(executor, operands);
         System.out.println("\nCONSOLE:");

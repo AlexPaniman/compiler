@@ -15,6 +15,7 @@
 <g id="clust1" class="cluster"><title>clusterIS0</title>
 <polygon fill="none" stroke="black" points="346.607,-397 346.607,-526 534.607,-526 534.607,-397 346.607,-397"/>
 </g>
+<<<<<<< HEAD
 <g id="clust5" class="cluster"><title>clusterF1</title>
 <polygon fill="none" stroke="black" points="2303.61,-315 2303.61,-449 2701.61,-449 2701.61,-315 2303.61,-315"/>
 </g>
@@ -26,6 +27,19 @@
 </g>
 <g id="clust6" class="cluster"><title>clusterDW142</title>
 <polygon fill="none" stroke="black" points="1495.61,-618 1495.61,-751 1689.61,-751 1689.61,-618 1495.61,-618"/>
+=======
+<g id="clust3" class="cluster"><title>clusterF0</title>
+<polygon fill="none" stroke="black" points="1619.61,-397 1619.61,-526 2017.61,-526 2017.61,-397 1619.61,-397"/>
+</g>
+<g id="clust6" class="cluster"><title>clusterDW142</title>
+<polygon fill="none" stroke="black" points="1495.61,-618 1495.61,-751 1689.61,-751 1689.61,-618 1495.61,-618"/>
+</g>
+<g id="clust5" class="cluster"><title>clusterF1</title>
+<polygon fill="none" stroke="black" points="2303.61,-315 2303.61,-449 2701.61,-449 2701.61,-315 2303.61,-315"/>
+</g>
+<g id="clust4" class="cluster"><title>clusterDW0</title>
+<polygon fill="none" stroke="black" points="2202.61,-151 2202.61,-289.5 2396.61,-289.5 2396.61,-151 2202.61,-151"/>
+>>>>>>> 5c5a614aad76bd4c91de3c5a6e5b849d02bddde1
 </g>
 <!-- 111 -->
 <g id="node1" class="node"><title>111</title>
