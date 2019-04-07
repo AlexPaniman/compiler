@@ -2,40 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce44498-8b93-4dd1-a2aa-36153786521d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/executor/ExecutableMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/executor/Function.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/executor/VoidFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nodes/UnaryOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ProgramExecutor$1.class.orig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ProgramExecutor.class.orig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgramExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgramExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/compile/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/compile/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/compile/CompilerException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/execute/Operand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/execute/Operand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/execute/VirtualMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/execute/VirtualMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/executor/NativeExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/NativeExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nodes/BinaryOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nodes/BinaryOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parse/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parse/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/graph.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graph.gv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nodes/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nodes/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/graph.gv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graph.gv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/graph.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/graph.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/script.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ProgramExecutor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProgramExecutor$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ProgramExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProgramExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/compile/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/compile/Compiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/compile/CompilerException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/execute/Operand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/execute/Operand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/execute/VirtualMachine$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/execute/VirtualMachine$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/execute/VirtualMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/execute/VirtualMachine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/executor/NativeExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/executor/NativeExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graph.dot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graph.gv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graph.gv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graph.gv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graph.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graph.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nodes/BinaryOperator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nodes/BinaryOperator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nodes/BinaryOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nodes/BinaryOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/parse/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/parse/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nodes/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nodes/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nodes/For.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nodes/For.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/script.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,22 +33,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProgramExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ProgramExecutor.java">
+      <file leaf-file-name="script.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/script.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+            <state relative-caret-position="108">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/script.txt">
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/parse/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="235">
+              <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DoWhile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nodes/DoWhile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="While.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nodes/While.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="For.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nodes/For.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+              <folding>
+                <element signature="method#graphViz#0;class#For#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NativeExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/executor/NativeExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/graph.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -115,7 +140,6 @@
         <option value="$PROJECT_DIR$/src/main/java/nodes/DefineFunction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nodes/Assign.java" />
         <option value="$PROJECT_DIR$/src/main/java/nodes/Program.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nodes/For.java" />
         <option value="$PROJECT_DIR$/src/main/java/nodes/Return.java" />
         <option value="$PROJECT_DIR$/src/main/java/nodes/FunctionCall.java" />
         <option value="$PROJECT_DIR$/src/main/java/parse/ParseException.java" />
@@ -123,21 +147,22 @@
         <option value="$PROJECT_DIR$/src/main/java/execute/VirtualMachineException.java" />
         <option value="$PROJECT_DIR$/src/test/java/SimpleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/lexer/Lexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nodes/Block.java" />
         <option value="$PROJECT_DIR$/src/main/java/nodes/INode.java" />
         <option value="$PROJECT_DIR$/src/main/resources/graph.gv" />
         <option value="$PROJECT_DIR$/src/main/java/execute/Operand.java" />
         <option value="$PROJECT_DIR$/src/main/java/nodes/BinaryOperator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parse/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/nodes/UnaryOperator.java" />
         <option value="$PROJECT_DIR$/src/main/java/executor/ExecutableMethod.java" />
         <option value="$PROJECT_DIR$/src/main/java/executor/Function.java" />
         <option value="$PROJECT_DIR$/src/main/java/executor/VoidFunction.java" />
         <option value="$PROJECT_DIR$/src/main/java/executor/NativeExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/execute/VirtualMachine.java" />
         <option value="$PROJECT_DIR$/src/main/java/compile/Compiler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/execute/VirtualMachine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nodes/Block.java" />
         <option value="$PROJECT_DIR$/src/main/java/ProgramExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/parse/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/resources/script.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/nodes/For.java" />
       </list>
     </option>
   </component>
@@ -174,6 +199,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,9 +283,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,15 +462,16 @@
       <workItem from="1553647446384" duration="3740000" />
       <workItem from="1553975619947" duration="1084000" />
       <workItem from="1554553690504" duration="34387000" />
+      <workItem from="1554618264074" duration="134000" />
+      <workItem from="1554639193124" duration="4009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226288000" />
+    <option name="totallyTimeSpent" value="230431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -453,34 +479,34 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Module Dependencies" weight="0.3296875" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.77258235" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44008714" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.19553666" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32306057" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.80283225" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5802338" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.7832093" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1296875" />
       <window_info anchor="right" id="Bean Validation" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
+      <window_info anchor="right" id="Module Dependencies" order="4" weight="0.3296875" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="4" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,17 +517,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="257" column="4" selection-start-line="257" selection-start-column="4" selection-end-line="257" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lexer/Token.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -517,13 +536,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nodes/Str.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.dot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.dot" />
     <entry file="file://$PROJECT_DIR$/src/main/java/nodes/ExtendedIf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="906">
@@ -573,20 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/While.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/DoWhile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nodes/Assign.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -598,13 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/FunctionCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -624,20 +616,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/graph.svg.png" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/For.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nodes/INode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -661,10 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2269">
           <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
-          <folding>
-            <element signature="e#4571#4572#0" expanded="true" />
-            <element signature="e#4603#4604#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -672,10 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="2115" column="7" lean-forward="true" selection-start-line="2115" selection-start-column="7" selection-end-line="2115" selection-end-column="7" />
-          <folding>
-            <element signature="e#86602#86603#0" expanded="true" />
-            <element signature="e#86673#86674#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,10 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
-          <folding>
-            <element signature="e#66572#66573#0" expanded="true" />
-            <element signature="e#66618#66619#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -711,16 +677,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.gv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="284" column="4" selection-start-line="284" selection-start-column="4" selection-end-line="284" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.svg" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/icon.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -728,10 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="method#ShortIf#0;class#ShortIf#0" />
-            <element signature="method#graphViz#0;class#ShortIf#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,12 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-297">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="initializer##0;class#BinaryOperator#0" />
-            <element signature="method#BinaryOperator#0;class#BinaryOperator#0" />
-            <element signature="method#graphViz#0;class#BinaryOperator#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,42 +706,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="method#UnaryOperator#0;class#UnaryOperator#0" />
-            <element signature="method#graphViz#0;class#UnaryOperator#0" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parse/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-          <folding>
-            <element signature="initializer##0;class#Parser#0" />
-            <element signature="method#Parser#0;class#Parser#0" />
-            <element signature="method#test#0;class#Parser#0" />
-            <element signature="method#next#0;class#Parser#0" />
-            <element signature="method#term#0;class#Parser#0" />
-            <element signature="method#expr#0;class#Parser#0" />
-            <element signature="method#parentExpr#0;class#Parser#0" />
-            <element signature="method#statement#0;class#Parser#0" />
-            <element signature="method#parse#0;class#Parser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/compile/CompilerException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding>
-            <element signature="e#107#108#0" expanded="true" />
-            <element signature="e#137#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/compile/CompilerException.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/executor/VoidFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -813,37 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="e#339#340#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/executor/NativeExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="method#NativeExecutor#0;class#NativeExecutor#0" />
-            <element signature="method#invoke#0;class#NativeExecutor#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/execute/VirtualMachine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1630">
-          <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
-          <folding>
-            <element signature="method#execute#0;class#VirtualMachine#0" />
-            <element signature="method#executeAll#0;class#VirtualMachine#0" />
-            <element signature="method#status#0;class#VirtualMachine#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -851,17 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding>
-            <element signature="method#Compiler#0;class#Compiler#0" />
-            <element signature="method#binary#0;class#Compiler#0" />
-            <element signature="method#math#1;class#Compiler#0" />
-            <element signature="method#compile#0;class#Compiler#0" />
-            <element signature="method#compileProgram#0;class#Compiler#0" />
-            <element signature="e#6841#6842#0" expanded="true" />
-            <element signature="e#6894#6895#0" expanded="true" />
-            <element signature="e#6947#6948#0" expanded="true" />
-            <element signature="e#6985#6986#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -877,17 +750,86 @@
         <state relative-caret-position="-486" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/execute/VirtualMachine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ProgramExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+        <state relative-caret-position="27">
+          <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/FunctionCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.gv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/DoWhile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/executor/NativeExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/parse/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/script.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state relative-caret-position="108">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/While.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nodes/For.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="method#graphViz#0;class#For#0" />
+          </folding>
         </state>
       </provider>
     </entry>

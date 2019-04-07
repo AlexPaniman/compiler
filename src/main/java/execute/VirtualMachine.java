@@ -30,14 +30,25 @@ public class VirtualMachine {
     }
 
 
-    private Object calculate(Object obj) {
+    private Object calculate(Object obj) throws VirtualMachineException {
         Operand operator = (Operand) obj;
         Object first = stack.pop();
         Class classFirst = first.getClass();
         Object second = stack.pop();
         Class classSecond = second.getClass();
-        if (classFirst == String.class || classSecond == String.class)
-            return second.toString() + first.toString();
+        if (classFirst == String.class || classSecond == String.class) {
+            switch (operator) {
+                case ADD:
+                    return second.toString() + first.toString();
+                case MUL:
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < (int) first; i++)
+                        sb.append(second);
+                    return sb.toString();
+                default:
+                    throw new VirtualMachineException("Unsupported operator");
+            }
+        }
         if (classFirst == Double.class || classSecond == Double.class) {
             double d1;
             if (classSecond == Double.class)

@@ -1,5 +1,6 @@
 import compile.Compiler;
 import execute.VirtualMachine;
+import executor.Function;
 import executor.NativeExecutor;
 import executor.VoidFunction;
 import javafx.application.Application;
