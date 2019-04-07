@@ -1,41 +1,38 @@
 package executor;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class NativeExecutor {
-    private Object executor;
-    private Map<Integer, Method> methods;
+    private List<ExecutableMethod> executableMethods;
+    private Map<String, Integer> functions;
 
-    public NativeExecutor(Object executor) {
-        this.executor = executor;
-        this.methods = new HashMap<>();
-        int counter = 0;
-        for (Method method: executor.getClass().getDeclaredMethods())
-            this.methods.put(counter ++, method);
+    public NativeExecutor(Map<String, Integer> functions) {
+        this.executableMethods = new ArrayList<>();
+        this.functions = functions;
     }
 
-    public int get(String name) throws NoSuchMethodException {
-        return methods
-                .entrySet()
+    public NativeExecutor func(String name, int numCount, Function function) {
+        executableMethods.add(new ExecutableMethod(functions.get(name), numCount, function));
+        return this;
+    }
+
+    public NativeExecutor func(String name, int numCount, VoidFunction function) {
+        func(name, numCount, o -> {
+            function.apply(o);
+            return null;
+        });
+        return this;
+    }
+
+    public Object invoke(int func, Stack<Object> stack) throws NoSuchMethodException {
+        ExecutableMethod em = executableMethods
                 .stream()
-                .filter(e -> e
-                        .getValue()
-                        .getName()
-                        .equals(name)
-                )
+                .filter(executableMethod -> executableMethod.funcId() == func)
                 .findAny()
-                .orElseThrow(NoSuchMethodException::new)
-                .getKey();
-    }
-
-    public Object invoke(int func, Stack<Object> stack) throws InvocationTargetException, IllegalAccessException {
-        Method method = methods.get(func);
-        method.setAccessible(true);
+                .orElseThrow(NoSuchMethodException::new);
         List<Object> args = new ArrayList<>();
-        for(int i = 0; i < method.getParameters().length; i ++)
+        for (int i = 0; i < em.numArgs(); i++)
             args.add(stack.pop());
-        return method.invoke(executor, args.toArray());
+        return em.func().apply(args.toArray());
     }
 }

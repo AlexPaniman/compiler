@@ -51,6 +51,8 @@ public class VirtualMachine {
             else
                 d2 = (int) first;
             switch (operator) {
+                case EQL:
+                    return d1 == d2 ? 1 : 0;
                 case ADD:
                     return d1 + d2;
                 case SUB:
@@ -108,75 +110,74 @@ public class VirtualMachine {
         throw new IllegalArgumentException();
     }
 
-    public void execute() throws VirtualMachineException {
+    public boolean execute() throws VirtualMachineException {
+        if (program[index] == PUSH) {
+            stack.push(program[index + 1]);
+            index += 2;
+        } else if (program[index] == POP) {
+            stack.pop();
+            index += 1;
+        } else if (program[index] == STORE) {
+            variables.put(program[index + 1], stack.pop());
+            index += 2;
+        } else if (program[index] == FETCH) {
+            stack.push(variables.get(program[index + 1]));
+            index += 2;
+        } else if (program[index] == JMP)
+            index = (int) program[index + 1];
+        else if (program[index] == JZ)
+            if ((int) stack.pop() == 0)
+                index = (int) program[index + 1];
+            else
+                index += 2;
+        else if (program[index] == JNZ)
+            if ((int) stack.pop() != 0)
+                index = (int) program[index + 1];
+            else
+                index += 2;
+
+        else if (program[index] == INVOKE) {
+            Frame frame = new Frame(index + 2);
+
+            frames.push(frame);
+            variables = frame.vars();
+
+            index = (int) program[index + 1];
+        } else if (program[index] == RET) {
+            index = frames.pop().returnIndex();
+
+            if (index == -1)
+                return false;
+
+            variables = frames.peek().vars();
+        } else if (program[index] == NATIVE) {
+            try {
+                stack.push(nativeExecutor.invoke((int) program[index + 1], stack));
+            } catch (NoSuchMethodException exc) {
+                throw new VirtualMachineException("Can't find or access native method!");
+            }
+            index += 2;
+        } else if (program[index] == NOT) {
+            stack.push((int) stack.pop() == 0 ? 1 : 0);
+            index += 1;
+        } else {
+            stack.push(calculate(program[index]));
+            index += 1;
+        }
+        return true;
+    }
+
+    public void executeAll() throws VirtualMachineException {
         while (true) {
-            if (program[index] == PUSH) {
-                stack.push(program[index + 1]);
-                index += 2;
-            } else if (program[index] == POP) {
-                stack.pop();
-                index += 1;
-            }
-
-            else if (program[index] == STORE) {
-                variables.put(program[index + 1], stack.pop());
-                index += 2;
-            } else if (program[index] == FETCH) {
-                stack.push(variables.get(program[index + 1]));
-                index += 2;
-            }
-
-            else if (program[index] == JMP)
-                index = (int) program[index + 1];
-            else if (program[index] == JZ)
-                if ((int) stack.pop() == 0)
-                    index = (int) program[index + 1];
-                else
-                    index += 2;
-            else if (program[index] == JNZ)
-                if ((int) stack.pop() != 0)
-                    index = (int) program[index + 1];
-                else
-                    index += 2;
-
-            else if (program[index] == INVOKE) {
-                Frame frame = new Frame(index + 2);
-
-                frames.push(frame);
-                variables = frame.vars();
-
-                index = (int) program[index + 1];
-            } else if (program[index] == RET) {
-                index = frames.pop().returnIndex();
-
-                if (index == -1)
-                    return;
-
-                variables = frames.peek().vars();
-            } else if (program[index] == NATIVE) {
-                try {
-                    stack.push(nativeExecutor.invoke((int) program[index + 1], stack));
-                } catch (InvocationTargetException | IllegalAccessException e) {
-                    throw new VirtualMachineException("Can't find or access native method!");
-                }
-                index += 2;
-            }
-
-            else if (program[index] == NOT)
-                stack.push((int) program[index] == 0? 1 : 0);
-            else if (program[index] == MINUS)
-                stack.push(program[index].getClass() == Double.class? -(double) program[index] : -(int) program[index]);
-            else {
-                stack.push(calculate(program[index]));
-                index += 1;
-            }
+            if (!execute())
+                break;
         }
     }
 
     public String status() {
         String status = "STATUS:\n";
-        status += "\tEXECUTION: " + (index >= program.length || index == -1? "COMPLETED" : "INCOMPLETE") + "\n";
-        status += "\tFRAMES: " + (frames.empty()? "ALL FRAMES DROPPED" : frames.size() + " FRAME IS ALIVE") + "\n";
+        status += "\tEXECUTION: " + (index >= program.length || index == -1 ? "COMPLETED" : "INCOMPLETE") + "\n";
+        status += "\tFRAMES: " + (frames.empty() ? "ALL FRAMES DROPPED" : frames.size() + " FRAME IS ALIVE") + "\n";
         status += "\tSTACK: " + stack;
         return status;
     }

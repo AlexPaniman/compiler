@@ -25,7 +25,6 @@ public enum Operand {
     POW,
     DIV,
     MOD,
-    MINUS,
 
     POP,
     PUSH,

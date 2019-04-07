@@ -1,6 +1,5 @@
 package nodes;
 
-import com.google.common.base.Objects;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -24,8 +23,7 @@ public class BinaryOperator extends INode {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
-        Type map = new TypeToken<Map<String, String>>() {
-        }.getType();
+        Type map = new TypeToken<Map<String, String>>() {}.getType();
         try {
             seq = gson.fromJson(
                     Files
@@ -58,11 +56,6 @@ public class BinaryOperator extends INode {
 
     public INode second() {
         return second;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(operator, first, second);
     }
 
     public String graphViz() {

@@ -1,7 +1,6 @@
 package compile;
 
 import execute.Operand;
-import executor.NativeExecutor;
 import lexer.Token;
 import nodes.*;
 
@@ -13,30 +12,35 @@ public class Compiler {
     private List<Object> program;
     private Map<String, Integer> variables;
     private Map<String, Integer> functions;
-    private NativeExecutor nativeExecutor;
+    private Map<String, Integer> nativeFunctions;
     private int count;
+    private int nativeCount;
 
-    public Compiler(NativeExecutor nativeExecutor) {
+    public Compiler() {
         this.program = new ArrayList<>();
         this.variables = new HashMap<>();
         this.functions = new HashMap<>();
-        this.nativeExecutor = nativeExecutor;
+        this.nativeFunctions = new HashMap<>();
         this.count = 0;
+        this.nativeCount = 0;
     }
 
     private void gen(Object... ops) {
         program.addAll(Arrays.asList(ops));
     }
 
-    private void binary(Operand operand, BinaryOperator node) throws CompilerException {
+    private void binary(Operand operand, BinaryOperator node) {
         compile(node.first());
         compile(node.second());
         gen(operand);
     }
 
-    private void math(BinaryOperator node) throws CompilerException {
+    private void math(BinaryOperator node) {
         Token token = node.operator();
-        if (token == Token.XOR)
+        if (token == Token.NOT_EQL) {
+            binary(Operand.EQL, node);
+            gen(NOT);
+        } else if (token == Token.XOR)
             binary(Operand.XOR, node);
         else if (token == Token.EQL)
             binary(Operand.EQL, node);
@@ -66,11 +70,21 @@ public class Compiler {
             binary(Operand.OR, node);
     }
 
-    private void compile(INode node) throws CompilerException {
+    private void math(UnaryOperator node) {
+        Token token = node.operator();
+        if (token == Token.NOT) {
+            compile(node.operand());
+            gen(NOT);
+        }
+    }
+
+    private void compile(INode node) {
         if (node instanceof Program)
             compile(((Program) node).program());
-        if (node instanceof BinaryOperator)
+        else if (node instanceof BinaryOperator)
             math((BinaryOperator) node);
+        else if (node instanceof UnaryOperator)
+            math((UnaryOperator) node);
         else if (node instanceof Block)
             for (INode n : ((Block) node).nodes())
                 compile(n);
@@ -135,8 +149,10 @@ public class Compiler {
             gen(JMP, 0);
             functions.put(defineFunc.name(), program.size());
             int index = program.size() - 1;
-            for (INode n : defineFunc.variables())
-                gen(STORE, variables.computeIfAbsent(((Variable) n).name(), nodeC -> count++));
+            for (INode n : defineFunc.variables()) {
+                Variable var = (Variable) n;
+                gen(STORE, variables.computeIfAbsent(var.name(), nodeC -> count++));
+            }
             if (defineFunc.body() instanceof Block)
                 compile(defineFunc.body());
             else {
@@ -158,19 +174,28 @@ public class Compiler {
                 compile(nodes[i]);
             if (functions.containsKey(call.name()))
                 gen(INVOKE, functions.get(call.name()));
-            else if (nativeExecutor != null) try {
-                gen(NATIVE, nativeExecutor.get(call.name()));
-            } catch (NoSuchMethodException exc) {
-                throw new CompilerException("Can't find or access " + call.name() + " function!");
-            } else throw new CompilerException("Can't find or access " + call.name() + " function!");
+            else {
+                String name = call.name();
+                if (nativeFunctions.containsKey(name))
+                    gen(NATIVE, nativeFunctions.get(name));
+                else
+                    gen(NATIVE, nativeFunctions.computeIfAbsent(name, nodeC -> nativeCount ++));
+            }
             if (!call.useReturn())
                 gen(POP);
         }
     }
 
-    public Object[] compileProgram(INode main) throws CompilerException {
+    public void compileProgram(INode main) {
         compile(main);
         gen(RET);
-        return program.toArray();
+    }
+
+    public Object[] program() {
+        return program.toArray(new Object[0]);
+    }
+
+    public Map<String, Integer> nativeFunctions() {
+        return nativeFunctions;
     }
 }

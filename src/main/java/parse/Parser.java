@@ -58,6 +58,11 @@ public class Parser {
 
     //Parse term
     private INode term() throws LexerException, ParseException {
+        //Not operator
+        if (lexer.token() == NOT) {
+            lexer.nextToken();
+            return new UnaryOperator(NOT, term());
+        }
         //Function or Variable
         if (lexer.token() == VAR) {
             //Get function or variable name
