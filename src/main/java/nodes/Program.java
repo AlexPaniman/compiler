@@ -16,7 +16,7 @@ public class Program extends INode {
         String graphViz = "";
         graphViz += program.graphViz();
         graphViz += id() + " [label = \"program\", shape = tripleoctagon];\n";
-        graphViz += id() + " -- " + program.id() + "\n";
+        graphViz += id() + " -- " + program.id() + ";\n";
         return graphViz;
     }
 }

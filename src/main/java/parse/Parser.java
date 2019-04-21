@@ -8,9 +8,9 @@ import lexer.LexerException;
 import lexer.Token;
 import nodes.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Type;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,29 +21,25 @@ import static lexer.Token.*;
 
 public class Parser {
     private Lexer lexer;
-    private static Map<String, Integer> priority;
+    private Map<String, Integer> priority;
 
-    static {
+    public Parser(Lexer lexer) throws LexerException {
+        this.lexer = lexer;
+        this.lexer.nextToken();
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
         Type map = new TypeToken<Map<String, Integer>>() {
         }.getType();
         try {
-            priority = gson.fromJson(
-                    Files
-                            .lines(new File("src/main/resources/priority.json").toPath())
-                            .reduce("", (acc, line) -> acc + line + "\n"),
-                    map
-            );
+            Reader is = new InputStreamReader(getClass().getResourceAsStream("/priority.json"));
+            StringBuilder builder = new StringBuilder();
+            for (int c; (c = is.read()) != -1; )
+                builder.append((char) c);
+            priority = gson.fromJson(builder.toString(), map);
         } catch (IOException io) {
             io.printStackTrace();
         }
-    }
-
-    public Parser(Lexer lexer) throws LexerException {
-        this.lexer = lexer;
-        this.lexer.nextToken();
     }
 
     private void test(Token test, String message) throws ParseException {
@@ -125,7 +121,7 @@ public class Parser {
 
             if (exprPriority <= stackPriority) do
                 expression.push(operators.pop());
-            while (!operators.empty() && Parser.priority.get(operators.peek().toString()) >= exprPriority);
+            while (!operators.empty() && priority.get(operators.peek().toString()) >= exprPriority);
 
             operators.push(lexer.token());
 

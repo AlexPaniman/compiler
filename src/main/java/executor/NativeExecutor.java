@@ -12,7 +12,8 @@ public class NativeExecutor {
     }
 
     public NativeExecutor func(String name, int numCount, Function function) {
-        executableMethods.add(new ExecutableMethod(functions.get(name), numCount, function));
+        if (functions.containsKey(name))
+            executableMethods.add(new ExecutableMethod(functions.get(name), numCount, function));
         return this;
     }
 

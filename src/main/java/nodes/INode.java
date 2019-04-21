@@ -11,7 +11,7 @@ public abstract class INode {
     }
 
     public String resultViz() {
-        return "graph A\n{" +
+        return "graph A {\n" +
                     graphViz() +
                 "}";
     }

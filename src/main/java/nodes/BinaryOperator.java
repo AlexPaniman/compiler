@@ -3,12 +3,13 @@ package nodes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import lexer.Lexer;
 import lexer.Token;
-
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,20 +18,19 @@ public class BinaryOperator extends INode {
     private INode first;
     private INode second;
 
-    private static Map<String, String> seq;
+    private Map<String, String> seq;
 
-    static {
+    public BinaryOperator(Token operator, INode first, INode second) {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
         Type map = new TypeToken<Map<String, String>>() {}.getType();
         try {
-            seq = gson.fromJson(
-                    Files
-                            .lines(new File("src/main/resources/sequence.json").toPath())
-                            .reduce("", (acc, line) -> acc + line + "\n"),
-                    map
-            );
+            Reader is = new InputStreamReader(getClass().getResourceAsStream("/sequence.json"));
+            StringBuilder builder = new StringBuilder();
+            for (int c; (c = is.read()) != -1; )
+                builder.append((char) c);
+            seq = gson.fromJson(builder.toString(), map);
             Map<String, String> temp = new HashMap<>();
             for (Map.Entry<String, String> entry: seq.entrySet())
                 temp.put(entry.getValue(), entry.getKey());
@@ -38,9 +38,6 @@ public class BinaryOperator extends INode {
         } catch (IOException io) {
             io.printStackTrace();
         }
-    }
-
-    public BinaryOperator(Token operator, INode first, INode second) {
         this.operator = operator;
         this.first = first;
         this.second = second;

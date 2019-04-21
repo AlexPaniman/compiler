@@ -165,7 +165,7 @@ public class Compiler {
             if (ret.expression() != null)
                 compile(ret.expression());
             else
-                gen((Object) null);
+                gen(PUSH, 0);
             gen(RET);
         } else if (node instanceof FunctionCall) {
             FunctionCall call = (FunctionCall) node;

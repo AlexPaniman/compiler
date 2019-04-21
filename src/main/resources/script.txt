@@ -1,6 +1,0 @@
-n = 100;
-    while(n)
-        do_while(n)
-            for(i = 0; n; i = i + 1)
-                n = n - 1;
-print (n);

@@ -4,10 +4,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
 import java.util.Map;
 
 import static lexer.Token.*;
@@ -19,30 +20,24 @@ public class Lexer {
     private Token token;
     private String value;
 
-    private static Map<String, String> seq;
-
-    static {
-        Gson gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
-        Type map = new TypeToken<Map<String, String>>() {
-        }.getType();
-        try {
-            seq = gson.fromJson(
-                    Files
-                            .lines(new File("src/main/resources/sequence.json").toPath())
-                            .reduce("", (acc, line) -> acc + line + "\n"),
-                    map
-            );
-        } catch (IOException io) {
-            io.printStackTrace();
-        }
-    }
-
+    private Map<String, String> seq;
 
     public Lexer(String program) {
         this.program = program.toCharArray();
         this.index = 0;
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+        Type map = new TypeToken<Map<String, String>>() {}.getType();
+        try {
+            Reader is = new InputStreamReader(getClass().getResourceAsStream("/sequence.json"));
+            StringBuilder builder = new StringBuilder();
+            for (int c; (c = is.read()) != -1; )
+                builder.append((char) c);
+            seq = gson.fromJson(builder.toString(), map);
+        } catch (IOException io) {
+            io.printStackTrace();
+        }
     }
 
 
